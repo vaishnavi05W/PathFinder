@@ -15,7 +15,7 @@
     using static System.Net.Mime.MediaTypeNames;
 
     public delegate void SequenceGroupChangedEventHandler(object sender, EventArgs e);
-    public delegate void SequenceNameChangedEventHandler(object sender, EventArgs e);   
+    public delegate void SequenceNameChangedEventHandler(object sender, EventArgs e);
     public delegate void SequenceSelectionChangedEventHanlder(object sender, EventArgs e);
     public delegate void SequenceHighlightChangedEventHandler(object sender, List<Room> rooms);
 
@@ -327,8 +327,8 @@
         {
             DataGridViewSelectedRowCollection rows = this.sequenceSettingdataGridView.SelectedRows;
             foreach (DataGridViewRow row in rows)
-            {
-                this.info.sequenceGroups.Remove((SequenceGroup)row.Cells[0].Value);
+            { 
+                this.info.sequenceGroups.RemoveAll(d => d.definedSequence.getNames() == row.Cells[2].Value.ToString());
                 this.sequenceSettingdataGridView.Rows.Remove(row);
             }
             sequenceGroupChangedReceiveMsg(this, e);
@@ -336,12 +336,13 @@
 
         private void toolStripButton5_Click(object sender, EventArgs e)
         {
+            if (this.listBox1.Items.Count == 0) return;
             SequenceGroup sg = new SequenceGroup();
             sg.definedSequence = new DefinedSequence();
             sg.definedSequence.name = "DefinedSequence" + this.info.sequenceGroups.Count;
-            foreach (var item in this.listBox1.Items)
-                sg.definedSequence.roomList.Add((RoomAndGroupObject)item); // definded seq
-            this.sequenceSettingdataGridView.Rows.Add(new object[] { sg, sg.definedSequence.frequency, sg.definedSequence.getNames() });
+            foreach (var item in this.listBox1.Items) sg.definedSequence.roomList.Add((RoomAndGroupObject)item);
+            foreach (var ds in info.sequenceGroups) if (ds.definedSequence.getNames() == sg.definedSequence.getNames()) return;
+            this.sequenceSettingdataGridView.Rows.Add(new object[] { sg, sg.definedSequence.frequency, sg.definedSequence.getNames()});
             info.sequenceGroups.Add(sg);
             sequenceGroupChangedReceiveMsg(this, e);
         }
@@ -367,6 +368,10 @@
                 MessageBox.Show("");
 
             }
+        }
+        private List<SequenceGroup> SGTemp;
+        private void sequenceSettingdataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 

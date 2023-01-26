@@ -123,12 +123,17 @@ namespace PathFinder
                     if (ent.Layer.Name == sequenceGroup.definedSequence.name)
                     {
                         if (ent is vdPolyline pl)
-                        { 
-                            pl.PenColor.SystemColor = Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256));
-                            this.vectorDrawBaseControl1.ActiveDocument.ActiveLayer.Update();
-                            this.vectorDrawBaseControl1.ActiveDocument.ActiveLayer.Update();
-                            this.vectorDrawBaseControl1.ActiveDocument.Update();
-                            this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
+                        {
+                            if (pl.HatchProperties == null && pl.Flag == VdConstPlineFlag.PlFlagOPEN )
+                            {
+
+
+                                pl.PenColor.SystemColor = Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256));
+                                this.vectorDrawBaseControl1.ActiveDocument.ActiveLayer.Update();
+                                this.vectorDrawBaseControl1.ActiveDocument.ActiveLayer.Update();
+                                this.vectorDrawBaseControl1.ActiveDocument.Update();
+                                this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
+                            }
                         }
                     }
                 }
@@ -291,22 +296,25 @@ namespace PathFinder
                     vectorDrawBaseControl1.ActiveDocument.SetActiveLayer(layer); ////PTK Added Layer
                     poly.SetUnRegisterDocument(this.vectorDrawBaseControl1.ActiveDocument);
                     poly.setDocumentDefaults(); 
-                    Random r = new Random();
-                    poly.PenColor.ByLayer = false;
-                    poly.LineWeight = VdConstLineWeight.LW_50;
-                    CadUtil.setColorPath(poly, Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256)), VdConstLineWeight.LW_50);
-                    this.vectorDrawBaseControl1.ActiveDocument.Update();
-                    this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
-                    this.vectorDrawBaseControl1.ActiveDocument.ActiveLayer.Update();
+                    //Random r = new Random();
+                    //poly.PenColor.ByLayer = false;
+                    //poly.LineWeight = VdConstLineWeight.LW_50;
+                    //CadUtil.setColorPath(poly, Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256)), VdConstLineWeight.LW_50);
+                    //this.vectorDrawBaseControl1.ActiveDocument.Update();
+                    //this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
+                    //this.vectorDrawBaseControl1.ActiveDocument.ActiveLayer.Update();
                     List<vdPolyline> polylines2 = writeTriangle(poly);
                     foreach(vdPolyline polyline in polylines2)
                     {  
                         this.vectorDrawBaseControl1.ActiveDocument.ActiveLayOut.Entities.AddItem(polyline);
                         polyline.SetUnRegisterDocument(this.vectorDrawBaseControl1.ActiveDocument);
                         polyline.setDocumentDefaults();
-                        polyline.PenColor = new vdColor(Color.Yellow); 
-                    }      
-                   
+                        polyline.PenColor = new vdColor(Color.Yellow);
+                        this.vectorDrawBaseControl1.ActiveDocument.Update();
+                        this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
+                        this.vectorDrawBaseControl1.ActiveDocument.ActiveLayer.Update();
+                    }
+
 
                     List<vdPolyline> polylines = sequenceGroup.getShortestPaths(this.vectorDrawBaseControl1.ActiveDocument);
                   
@@ -474,7 +482,7 @@ namespace PathFinder
                 }
 
             }
-
+            lstCacheTriangle = polylines;
             return polylines;
         }
         public void drawRoute(VectorDraw.Render.vdRender render)
@@ -670,8 +678,17 @@ namespace PathFinder
         {
             info.route = new vdPolyline();
             info.routes = new List<vdPolyline>();
+            clearTriagle();
             this.vectorDrawBaseControl1.ActiveDocument.Update();
             this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
+
+        }
+        public List<vdPolyline> lstCacheTriangle ;
+        private void clearTriagle()
+        {
+            if (lstCacheTriangle != null)
+            foreach (vdPolyline vcache in lstCacheTriangle)
+                this.vectorDrawBaseControl1.ActiveDocument.ActiveLayOut.Entities.RemoveItem(vcache);
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
