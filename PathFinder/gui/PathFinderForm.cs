@@ -387,6 +387,7 @@ namespace PathFinder
                 {
                     this.vectorDrawBaseControl1.ActiveDocument.Layers.RemoveItem(layer);
                 }
+                clearTriagle();
                 this.vectorDrawBaseControl1.ActiveDocument.Update();
                 this.vectorDrawBaseControl1.ActiveDocument.Redraw(true); 
             }
@@ -478,11 +479,13 @@ namespace PathFinder
                         poly.Transformby(m);
                         //poly.Draw(render);
                         polylines.Add(poly);
-                    
+                    if (lstCacheTriangle == null)
+                        lstCacheTriangle = new List<vdPolyline>();
+                    lstCacheTriangle.Add(poly);
                 }
 
             }
-            lstCacheTriangle = polylines;
+            
             return polylines;
         }
         public void drawRoute(VectorDraw.Render.vdRender render)
@@ -679,6 +682,7 @@ namespace PathFinder
             info.route = new vdPolyline();
             info.routes = new List<vdPolyline>();
             clearTriagle();
+            lstCacheTriangle = new List<vdPolyline>();
             this.vectorDrawBaseControl1.ActiveDocument.Update();
             this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
 
