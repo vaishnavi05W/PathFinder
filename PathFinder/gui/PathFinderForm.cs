@@ -371,11 +371,11 @@ namespace PathFinder
                 setText(getDoc()); //PTK Added Room
                 setColor(getDoc()) ; //PTK added Color
 
-                    this.vectorDrawBaseControl1.ActiveDocument.Redraw(true); 
-                this.vectorDrawBaseControl1.ActiveDocument.Update();
+                //    this.vectorDrawBaseControl1.ActiveDocument.Redraw(true); 
+                //this.vectorDrawBaseControl1.ActiveDocument.Update();
 
                 this.vectorDrawBaseControl1.ActiveDocument.SaveAs(sd.FileName);
-
+                clearTriagle();
                 foreach (vdCircle circle in newCircles) {
                     this.vectorDrawBaseControl1.ActiveDocument.ActiveLayOut.Entities.RemoveItem(circle);
                 }
@@ -387,7 +387,7 @@ namespace PathFinder
                 {
                     this.vectorDrawBaseControl1.ActiveDocument.Layers.RemoveItem(layer);
                 }
-                clearTriagle();
+              
                 this.vectorDrawBaseControl1.ActiveDocument.Update();
                 this.vectorDrawBaseControl1.ActiveDocument.Redraw(true); 
             }
