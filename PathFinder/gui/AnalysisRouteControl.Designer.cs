@@ -64,7 +64,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.CheckAll = new PathFinder.gui.HostedCheckbox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -87,7 +86,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(0, 38);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -110,7 +109,7 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -123,9 +122,9 @@
             this.groupBox1.Controls.Add(this.sequenceGroupDataGridView);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(466, 146);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -136,7 +135,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(58, 0);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(1);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(71, 17);
             this.checkBox1.TabIndex = 2;
@@ -161,7 +160,7 @@
             this.sequenceGroupDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sequenceGroupDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.sequenceGroupDataGridView.Location = new System.Drawing.Point(2, 15);
-            this.sequenceGroupDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sequenceGroupDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.sequenceGroupDataGridView.Name = "sequenceGroupDataGridView";
             this.sequenceGroupDataGridView.RowHeadersWidth = 20;
             this.sequenceGroupDataGridView.RowTemplate.Height = 28;
@@ -240,7 +239,7 @@
             this.tableLayoutPanel2.Controls.Add(this.groupBox3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -253,9 +252,9 @@
             this.groupBox4.Controls.Add(this.subSequenceDataGridView);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(2, 134);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(466, 128);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
@@ -274,7 +273,7 @@
             this.subSequenceDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subSequenceDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.subSequenceDataGridView.Location = new System.Drawing.Point(2, 15);
-            this.subSequenceDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.subSequenceDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.subSequenceDataGridView.Name = "subSequenceDataGridView";
             this.subSequenceDataGridView.RowHeadersWidth = 20;
             this.subSequenceDataGridView.RowTemplate.Height = 28;
@@ -323,9 +322,9 @@
             this.groupBox3.Controls.Add(this.sequenceDataGridView);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(2, 2);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(466, 128);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
@@ -344,7 +343,7 @@
             this.sequenceDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sequenceDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.sequenceDataGridView.Location = new System.Drawing.Point(2, 15);
-            this.sequenceDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sequenceDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.sequenceDataGridView.Name = "sequenceDataGridView";
             this.sequenceDataGridView.RowHeadersWidth = 20;
             this.sequenceDataGridView.RowTemplate.Height = 28;
@@ -456,6 +455,7 @@
             "Door to Door"});
             this.centerTypeComboBox.Name = "centerTypeComboBox";
             this.centerTypeComboBox.Size = new System.Drawing.Size(75, 31);
+            this.centerTypeComboBox.Visible = false;
             // 
             // mainRouteComboBox
             // 
@@ -482,7 +482,7 @@
             // 
             this.progressBar2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.progressBar2.Location = new System.Drawing.Point(238, 2);
-            this.progressBar2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.progressBar2.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(233, 20);
             this.progressBar2.TabIndex = 4;
@@ -496,28 +496,12 @@
             this.tableLayoutPanel3.Controls.Add(this.progressBar2, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 456);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(473, 24);
             this.tableLayoutPanel3.TabIndex = 5;
-            // 
-            // CheckAll
-            // 
-            // 
-            // CheckAll
-            // 
-            this.CheckAll.CheckBoxControl.AccessibleName = "CheckAll";
-            this.CheckAll.CheckBoxControl.Location = new System.Drawing.Point(0, 0);
-            this.CheckAll.CheckBoxControl.Name = "CheckAll";
-            this.CheckAll.CheckBoxControl.Size = new System.Drawing.Size(182, 45);
-            this.CheckAll.CheckBoxControl.TabIndex = 0;
-            this.CheckAll.CheckBoxControl.Text = "Check All";
-            this.CheckAll.Checked = false;
-            this.CheckAll.Name = "CheckAll";
-            this.CheckAll.Size = new System.Drawing.Size(182, 45);
-            this.CheckAll.Text = "Check All";
             // 
             // AnalysisRouteControl
             // 
@@ -526,7 +510,7 @@
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AnalysisRouteControl";
             this.Size = new System.Drawing.Size(473, 480);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -574,7 +558,6 @@
         private System.Windows.Forms.ToolStripComboBox centerTypeComboBox;
         private System.Windows.Forms.ToolStripComboBox mainRouteComboBox;
         private System.Windows.Forms.CheckBox checkBox1;
-        private HostedCheckbox CheckAll;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column38;

@@ -411,7 +411,7 @@ namespace PathFinder
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(192, 74);
+            this.tabPage10.Size = new System.Drawing.Size(696, 934);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Setting";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -425,7 +425,7 @@ namespace PathFinder
             this.tabControl4.Location = new System.Drawing.Point(3, 3);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(186, 68);
+            this.tabControl4.Size = new System.Drawing.Size(690, 928);
             this.tabControl4.TabIndex = 0;
             // 
             // tabPage11
@@ -434,7 +434,7 @@ namespace PathFinder
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(178, 42);
+            this.tabPage11.Size = new System.Drawing.Size(682, 902);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Sequence";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -445,7 +445,7 @@ namespace PathFinder
             this.sequenceSettingControlcs1.Location = new System.Drawing.Point(3, 3);
             this.sequenceSettingControlcs1.Margin = new System.Windows.Forms.Padding(5);
             this.sequenceSettingControlcs1.Name = "sequenceSettingControlcs1";
-            this.sequenceSettingControlcs1.Size = new System.Drawing.Size(172, 36);
+            this.sequenceSettingControlcs1.Size = new System.Drawing.Size(676, 896);
             this.sequenceSettingControlcs1.TabIndex = 13;
             // 
             // tabPage12
@@ -454,7 +454,7 @@ namespace PathFinder
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(751, 1226);
+            this.tabPage12.Size = new System.Drawing.Size(682, 902);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Room Group";
             this.tabPage12.UseVisualStyleBackColor = true;
@@ -465,7 +465,7 @@ namespace PathFinder
             this.roomGroupControl1.Location = new System.Drawing.Point(3, 3);
             this.roomGroupControl1.Margin = new System.Windows.Forms.Padding(5);
             this.roomGroupControl1.Name = "roomGroupControl1";
-            this.roomGroupControl1.Size = new System.Drawing.Size(745, 1220);
+            this.roomGroupControl1.Size = new System.Drawing.Size(676, 896);
             this.roomGroupControl1.TabIndex = 10;
             // 
             // tabPage15
@@ -474,7 +474,7 @@ namespace PathFinder
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(751, 1226);
+            this.tabPage15.Size = new System.Drawing.Size(682, 902);
             this.tabPage15.TabIndex = 2;
             this.tabPage15.Text = "Main Route";
             this.tabPage15.UseVisualStyleBackColor = true;
@@ -485,7 +485,7 @@ namespace PathFinder
             this.mainRouteControl1.Location = new System.Drawing.Point(3, 3);
             this.mainRouteControl1.Margin = new System.Windows.Forms.Padding(5);
             this.mainRouteControl1.Name = "mainRouteControl1";
-            this.mainRouteControl1.Size = new System.Drawing.Size(745, 1220);
+            this.mainRouteControl1.Size = new System.Drawing.Size(676, 896);
             this.mainRouteControl1.TabIndex = 11;
             // 
             // PathFinderForm
