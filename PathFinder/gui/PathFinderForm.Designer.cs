@@ -61,14 +61,14 @@ namespace PathFinder
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.analysisRouteControl1 = new PathFinder.gui.AnalysisRouteControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.sequenceSettingControlcs1 = new PathFinder.gui.SequenceSettingControlcs();
             this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.roomGroupControl1 = new PathFinder.gui.RoomGroupControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.analysisRouteControl1 = new PathFinder.gui.AnalysisRouteControl();
+            this.sequenceSettingControlcs1 = new PathFinder.gui.SequenceSettingControlcs();
+            this.roomGroupControl1 = new PathFinder.gui.RoomGroupControl();
             this.mainRouteControl1 = new PathFinder.gui.MainRouteControl();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -351,7 +351,10 @@ namespace PathFinder
             this.vectorDrawBaseControl1.TabIndex = 1;
             this.vectorDrawBaseControl1.DrawAfter += new VectorDraw.Professional.Control.DrawAfterEventHandler(this.vectorDrawBaseControl1_DrawAfter);
             this.vectorDrawBaseControl1.GripSelectionModified += new VectorDraw.Professional.Control.GripSelectionModifiedEventHandler(this.vectorDrawBaseControl1_GripSelectionModified);
+            this.vectorDrawBaseControl1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vectorDrawBaseControl1_Scroll);
             this.vectorDrawBaseControl1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.vectorDrawBaseControl1_KeyDown);
+            this.vectorDrawBaseControl1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.vectorDrawBaseControl1_MouseMove);
+            this.vectorDrawBaseControl1.Move += new System.EventHandler(this.vectorDrawBaseControl1_Move);
             // 
             // tabControl3
             // 
@@ -396,15 +399,6 @@ namespace PathFinder
             this.tabPage17.Text = "Sequence";
             this.tabPage17.UseVisualStyleBackColor = true;
             // 
-            // analysisRouteControl1
-            // 
-            this.analysisRouteControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.analysisRouteControl1.Location = new System.Drawing.Point(3, 3);
-            this.analysisRouteControl1.Margin = new System.Windows.Forms.Padding(5);
-            this.analysisRouteControl1.Name = "analysisRouteControl1";
-            this.analysisRouteControl1.Size = new System.Drawing.Size(676, 896);
-            this.analysisRouteControl1.TabIndex = 1;
-            // 
             // tabPage10
             // 
             this.tabPage10.Controls.Add(this.tabControl4);
@@ -439,15 +433,6 @@ namespace PathFinder
             this.tabPage11.Text = "Sequence";
             this.tabPage11.UseVisualStyleBackColor = true;
             // 
-            // sequenceSettingControlcs1
-            // 
-            this.sequenceSettingControlcs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sequenceSettingControlcs1.Location = new System.Drawing.Point(3, 3);
-            this.sequenceSettingControlcs1.Margin = new System.Windows.Forms.Padding(5);
-            this.sequenceSettingControlcs1.Name = "sequenceSettingControlcs1";
-            this.sequenceSettingControlcs1.Size = new System.Drawing.Size(676, 896);
-            this.sequenceSettingControlcs1.TabIndex = 13;
-            // 
             // tabPage12
             // 
             this.tabPage12.Controls.Add(this.roomGroupControl1);
@@ -459,15 +444,6 @@ namespace PathFinder
             this.tabPage12.Text = "Room Group";
             this.tabPage12.UseVisualStyleBackColor = true;
             // 
-            // roomGroupControl1
-            // 
-            this.roomGroupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roomGroupControl1.Location = new System.Drawing.Point(3, 3);
-            this.roomGroupControl1.Margin = new System.Windows.Forms.Padding(5);
-            this.roomGroupControl1.Name = "roomGroupControl1";
-            this.roomGroupControl1.Size = new System.Drawing.Size(676, 896);
-            this.roomGroupControl1.TabIndex = 10;
-            // 
             // tabPage15
             // 
             this.tabPage15.Controls.Add(this.mainRouteControl1);
@@ -478,6 +454,33 @@ namespace PathFinder
             this.tabPage15.TabIndex = 2;
             this.tabPage15.Text = "Main Route";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // analysisRouteControl1
+            // 
+            this.analysisRouteControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.analysisRouteControl1.Location = new System.Drawing.Point(3, 3);
+            this.analysisRouteControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.analysisRouteControl1.Name = "analysisRouteControl1";
+            this.analysisRouteControl1.Size = new System.Drawing.Size(676, 896);
+            this.analysisRouteControl1.TabIndex = 1;
+            // 
+            // sequenceSettingControlcs1
+            // 
+            this.sequenceSettingControlcs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sequenceSettingControlcs1.Location = new System.Drawing.Point(3, 3);
+            this.sequenceSettingControlcs1.Margin = new System.Windows.Forms.Padding(5);
+            this.sequenceSettingControlcs1.Name = "sequenceSettingControlcs1";
+            this.sequenceSettingControlcs1.Size = new System.Drawing.Size(676, 896);
+            this.sequenceSettingControlcs1.TabIndex = 13;
+            // 
+            // roomGroupControl1
+            // 
+            this.roomGroupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roomGroupControl1.Location = new System.Drawing.Point(3, 3);
+            this.roomGroupControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.roomGroupControl1.Name = "roomGroupControl1";
+            this.roomGroupControl1.Size = new System.Drawing.Size(676, 896);
+            this.roomGroupControl1.TabIndex = 10;
             // 
             // mainRouteControl1
             // 
@@ -501,6 +504,7 @@ namespace PathFinder
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PathFinderForm";
             this.Text = "병실 - 경로 분석 Hospital Room - Route Analysis(1.1)";
+            this.Load += new System.EventHandler(this.PathFinderForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

@@ -217,6 +217,12 @@
     <Compile Include="gui\Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="gui\HiddenExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\HiddenExport.Designer.cs">
+      <DependentUpon>HiddenExport.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\HostedCheckbox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -329,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="gui\Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\HiddenExport.resx">
+      <DependentUpon>HiddenExport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gui\PathFinderBimForm.resx">
       <DependentUpon>PathFinderBimForm.cs</DependentUpon>

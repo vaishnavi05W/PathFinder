@@ -465,7 +465,7 @@
             "Min. Subseq.Count",
             "None"});
             this.mainRouteComboBox.Name = "mainRouteComboBox";
-            this.mainRouteComboBox.Size = new System.Drawing.Size(100, 23);
+            this.mainRouteComboBox.Size = new System.Drawing.Size(100, 31);
             // 
             // label1
             // 
@@ -538,7 +538,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView sequenceGroupDataGridView;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
@@ -573,5 +572,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        public System.Windows.Forms.DataGridView sequenceGroupDataGridView;
     }
 }

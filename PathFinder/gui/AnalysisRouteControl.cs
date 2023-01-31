@@ -373,10 +373,11 @@
                 object[] ob = { count++, sequence, sequence.shortestSubSequence, dis };
                 sequenceDataGridView.Rows.Add(ob);
 
-            }
+            } 
             List<vdPolyline> vdPolylines = sequenceGroup.getShortestPaths(doc);
             info.routes = vdPolylines;
             info.route = new vdPolyline( doc, sequenceGroup.getShortestPath());
+
             doc.Update();
             doc.Redraw(true);
         }

@@ -817,7 +817,9 @@ namespace PathFinder
                 form3.info.floor.name = node.ToString();
                 Info.fileInfo = fi;
                 form3.importIFC(storey, form3.getDoc());
-              
+
+       
+
             }
         }
     }

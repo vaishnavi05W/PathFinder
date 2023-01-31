@@ -33,6 +33,7 @@ using System.Drawing.Imaging;
 using System.Security.Cryptography;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
+using VectorDraw.Professional.Control;
 
 namespace PathFinder
 {
@@ -263,17 +264,27 @@ namespace PathFinder
 
             this.tabPage2.Text = info.floor.name;
             watch.Stop();
+        } 
+        public void SelectAllRoute()
+        {
+            analysisRouteControl1.sequenceGroupDataGridView.ClearSelection();
+            this.vectorDrawBaseControl1.ActiveDocument.Document.Update();
+            this.vectorDrawBaseControl1.ActiveDocument.Document.Redraw(true);
+            
         }
-
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //analysisRouteControl1.sequenceGroupDataGridView.ClearSelection();
+            SelectAllRoute();
+            //return;
+
             SaveFileDialog sd = new SaveFileDialog();
 
             sd.Filter = "AutoCAD|*.dwg";
             List<vdLayer> newLayers = new List<vdLayer>();
-            List<vdPolyline> newPolylines = new List<vdPolyline>();  
+            List<vdPolyline> newPolylines = new List<vdPolyline>();
             List<vdCircle> newCircles = new List<vdCircle>();
-
+            var newDoc = this.vectorDrawBaseControl1.ActiveDocument;
             if (sd.ShowDialog(this) == DialogResult.OK)
             {
                 short count = 10;
@@ -281,31 +292,26 @@ namespace PathFinder
                 {
                     count++;
                     vdLayer layer = this.vectorDrawBaseControl1.ActiveDocument.Layers.Add(sequenceGroup.definedSequence.name);
-                    newLayers.Add(layer);
-
+                    //layer.VisibleOnForms = false;
+                    
+                    newLayers.Add(layer); 
 
                     vdPolyline poly = new vdPolyline(this.vectorDrawBaseControl1.ActiveDocument, sequenceGroup.getShortestPath());
                     newPolylines.Add(poly);
 
-                    layer.PenColor.ColorIndex = count;  
-                   
-                     layer.Name = sequenceGroup.ToString();
+                    layer.PenColor.ColorIndex = count;
+
+                    layer.Name = sequenceGroup.ToString(); 
                     
                     this.vectorDrawBaseControl1.ActiveDocument.ActiveLayOut.Entities.AddItem(poly);
                     poly.Layer = layer;
                     vectorDrawBaseControl1.ActiveDocument.SetActiveLayer(layer); ////PTK Added Layer
                     poly.SetUnRegisterDocument(this.vectorDrawBaseControl1.ActiveDocument);
-                    poly.setDocumentDefaults(); 
-                    //Random r = new Random();
-                    //poly.PenColor.ByLayer = false;
-                    //poly.LineWeight = VdConstLineWeight.LW_50;
-                    //CadUtil.setColorPath(poly, Color.FromArgb(r.Next(0, 256), r.Next(0, 256), r.Next(0, 256)), VdConstLineWeight.LW_50);
-                    //this.vectorDrawBaseControl1.ActiveDocument.Update();
-                    //this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
-                    //this.vectorDrawBaseControl1.ActiveDocument.ActiveLayer.Update();
+                    poly.setDocumentDefaults();
+
                     List<vdPolyline> polylines2 = writeTriangle(poly);
-                    foreach(vdPolyline polyline in polylines2)
-                    {  
+                    foreach (vdPolyline polyline in polylines2)
+                    {
                         this.vectorDrawBaseControl1.ActiveDocument.ActiveLayOut.Entities.AddItem(polyline);
                         polyline.SetUnRegisterDocument(this.vectorDrawBaseControl1.ActiveDocument);
                         polyline.setDocumentDefaults();
@@ -317,37 +323,37 @@ namespace PathFinder
 
 
                     List<vdPolyline> polylines = sequenceGroup.getShortestPaths(this.vectorDrawBaseControl1.ActiveDocument);
-                  
+
                     if (polylines.Count == 0) continue;
 
-                        vdPolyline first = polylines.First(); 
-                        vdCircle vdCircle = new vdCircle((this.vectorDrawBaseControl1.ActiveDocument));
-                        newCircles.Add(vdCircle);
-                        vdCircle.Layer = layer;
-                        this.vectorDrawBaseControl1.ActiveDocument.Model.Entities.AddItem(vdCircle);
-                        vdCircle.SetUnRegisterDocument(this.vectorDrawBaseControl1.ActiveDocument);
-                        vdCircle.setDocumentDefaults();
-                        vdCircle.Center = first.getStartPoint();
-                        poly.PenColor.SystemColor = Color.Green; //Using system color 
-                        vdCircle.Radius = 800;
-                        vdCircle.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
+                    vdPolyline first = polylines.First();
+                    vdCircle vdCircle = new vdCircle((this.vectorDrawBaseControl1.ActiveDocument));
+                    newCircles.Add(vdCircle);
+                    vdCircle.Layer = layer;
+                    this.vectorDrawBaseControl1.ActiveDocument.Model.Entities.AddItem(vdCircle);
+                    vdCircle.SetUnRegisterDocument(this.vectorDrawBaseControl1.ActiveDocument);
+                    vdCircle.setDocumentDefaults();
+                    vdCircle.Center = first.getStartPoint();
+                    poly.PenColor.SystemColor = Color.Green; //Using system color 
+                    vdCircle.Radius = 800;
+                    vdCircle.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
 
-                        vdPolyline last = polylines.Last();
-                        vdCircle vdCircle2 = new vdCircle((this.vectorDrawBaseControl1.ActiveDocument));
-                        newCircles.Add(vdCircle2);
-                        vdCircle.Layer = layer;
-                        this.vectorDrawBaseControl1.ActiveDocument.Model.Entities.AddItem(vdCircle2);
-                        vdCircle2.SetUnRegisterDocument(this.vectorDrawBaseControl1.ActiveDocument);
-                        vdCircle2.setDocumentDefaults();
-                        vdCircle2.Center = last.getEndPoint();
-                        poly.PenColor.SystemColor = Color.Green;  //Using system color 
-                        vdCircle2.Radius = 800;
-                        vdCircle2.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
-                    
+                    vdPolyline last = polylines.Last();
+                    vdCircle vdCircle2 = new vdCircle((this.vectorDrawBaseControl1.ActiveDocument));
+                    newCircles.Add(vdCircle2);
+                    vdCircle.Layer = layer;
+                    this.vectorDrawBaseControl1.ActiveDocument.Model.Entities.AddItem(vdCircle2);
+                    vdCircle2.SetUnRegisterDocument(this.vectorDrawBaseControl1.ActiveDocument);
+                    vdCircle2.setDocumentDefaults();
+                    vdCircle2.Center = last.getEndPoint();
+                    poly.PenColor.SystemColor = Color.Green;  //Using system color 
+                    vdCircle2.Radius = 800;
+                    vdCircle2.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
+
                     foreach (vdPolyline poly2 in polylines)
                     {
                         if (poly2 != null)
-                        { 
+                        {
 
                             vdCircle circle3 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
                             newCircles.Add(circle3);
@@ -367,16 +373,16 @@ namespace PathFinder
                     }
 
                 }
-                 
-                setText(getDoc()); //PTK Added Room
-                setColor(getDoc()) ; //PTK added Color
 
-                //    this.vectorDrawBaseControl1.ActiveDocument.Redraw(true); 
-                //this.vectorDrawBaseControl1.ActiveDocument.Update();
+                setText(getDoc()); //PTK Added Room
+                setColor(getDoc()); //PTK added Color
 
                 this.vectorDrawBaseControl1.ActiveDocument.SaveAs(sd.FileName);
+               
+
                 clearTriagle();
-                foreach (vdCircle circle in newCircles) {
+                foreach (vdCircle circle in newCircles)
+                {
                     this.vectorDrawBaseControl1.ActiveDocument.ActiveLayOut.Entities.RemoveItem(circle);
                 }
                 foreach (vdPolyline poly in newPolylines)
@@ -387,12 +393,17 @@ namespace PathFinder
                 {
                     this.vectorDrawBaseControl1.ActiveDocument.Layers.RemoveItem(layer);
                 }
-              
+
                 this.vectorDrawBaseControl1.ActiveDocument.Update();
-                this.vectorDrawBaseControl1.ActiveDocument.Redraw(true); 
+                this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
             }
+            //HiddenExport export= new HiddenExport(this.vectorDrawBaseControl1 , this.info);
+            //export.ShowDialog();
+            //export.Hide();
 
         }
+         
+
         vdIFCBuildingStorey vdIFCBuildingStorey; 
         public void importIFC(vdIFCBuildingStorey storey, vdDocument doc)
         {
@@ -464,7 +475,7 @@ namespace PathFinder
                         double angle = v.Angle2DDirection() - Math.PI / 2.0;
 
                      
-                        vdPolyline poly = new vdPolyline(this.vectorDrawBaseControl1.ActiveDocument);
+                        vdPolyline poly = new vdPolyline(polyline.Document);// preapred PTK
 
                         poly.VertexList.Add(new VectorDraw.Geometry.gPoint(-100, -100));
                         poly.VertexList.Add(new VectorDraw.Geometry.gPoint(100, -100));
@@ -490,78 +501,91 @@ namespace PathFinder
         }
         public void drawRoute(VectorDraw.Render.vdRender render)
         {
-           
-
-                if (info.route != null) info.route.Draw(render);
-                List<vdPolyline> polylines = writeTriangle(info.route);
-                foreach(vdPolyline polyline in polylines) polyline.Draw(render);  
-               
-               
-                        if (info.routes != null && info.routes.Count>0)
+            var doc = this.vectorDrawBaseControl1.ActiveDocument;
+            DataGridViewSelectedRowCollection drselect = analysisRouteControl1.sequenceGroupDataGridView.SelectedRows;
+            if (drselect.Count == 0)
+            {
+                foreach (var sequenceGroup in info.sequenceGroups)
                 {
+                    info.routes = sequenceGroup.getShortestPaths(doc);
+                    info.route = new vdPolyline(doc, sequenceGroup.getShortestPath());
+                    DrawRoutePath(render);
+                }
+            }
+            else
+            { 
+                DrawRoutePath(render);
+            }
 
-                    vdPolyline first = info.routes.First();
-                    if (first != null)
+
+        }
+        private void DrawRoutePath(VectorDraw.Render.vdRender render)
+        {
+            if (info.route != null)
+                info.route.Draw(render);
+
+            List<vdPolyline> polylines = writeTriangle(info.route);
+
+            foreach (vdPolyline polyline in polylines)
+                polyline.Draw(render);
+
+
+            if (info.routes != null && info.routes.Count > 0)
+            {
+
+                vdPolyline first = info.routes.First();
+                if (first != null)
+                {
+                    vdCircle circle11 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
+                    circle11.Center = first.getStartPoint();
+                    circle11.Radius = 800;
+                    circle11.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
+                    circle11.PenColor.Red = 0; circle11.PenColor.Green = 0; circle11.PenColor.Blue = 255;
+                    circle11.Draw(render);
+                }
+                vdPolyline last = info.routes.Last();
+                if (last != null)
+                {
+                    vdCircle circle22 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
+                    circle22.Center = last.getEndPoint();
+                    circle22.Radius = 800;
+                    circle22.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
+                    circle22.PenColor.Red = 0; circle22.PenColor.Green = 0; circle22.PenColor.Blue = 255;
+                    circle22.Draw(render);
+
+                }
+                foreach (vdPolyline poly in info.routes)
+                {
+                    if (poly != null)
                     {
-                        vdCircle circle11 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
-                        circle11.Center = first.getStartPoint();
-                        circle11.Radius = 800;
-                        circle11.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
-                        circle11.PenColor.Red = 0; circle11.PenColor.Green = 0; circle11.PenColor.Blue = 255;
-                        circle11.Draw(render);
-                    }
-                    vdPolyline last = info.routes.Last();
-                    if (last != null)
-                    {
-                        vdCircle circle22 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
-                        circle22.Center = last.getEndPoint();
-                        circle22.Radius = 800;
-                        circle22.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
-                        circle22.PenColor.Red = 0; circle22.PenColor.Green = 0; circle22.PenColor.Blue = 255;
-                        circle22.Draw(render);
+                        poly.Draw(render);
+                        vdCircle circle1 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
+                        circle1.Center = poly.getStartPoint();
+                        circle1.Radius = 500;
+                        circle1.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
+                        circle1.PenColor.Red = 255; circle1.PenColor.Green = 0; circle1.PenColor.Blue = 0;
 
-                    }
+                        circle1.Draw(render);
 
 
+                        vdCircle circle2 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
+                        circle2.Center = poly.getEndPoint();
+                        circle2.Radius = 500;
+                        circle2.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
+                        circle2.PenColor.Red = 255; circle2.PenColor.Green = 0; circle2.PenColor.Blue = 0;
 
-                    foreach (vdPolyline poly in info.routes)
-                    {
-                        if (poly != null)
-                        {
-                            poly.Draw(render);
-                            vdCircle circle1 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
-                            circle1.Center = poly.getStartPoint();
-                            circle1.Radius = 500;
-                            circle1.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
-                            circle1.PenColor.Red = 255; circle1.PenColor.Green = 0; circle1.PenColor.Blue = 0;
-
-                            circle1.Draw(render);
+                        circle2.Draw(render);
 
 
-                            vdCircle circle2 = new vdCircle(this.vectorDrawBaseControl1.ActiveDocument);
-                            circle2.Center = poly.getEndPoint();
-                            circle2.Radius = 500;
-                            circle2.HatchProperties = new VectorDraw.Professional.vdObjects.vdHatchProperties(VectorDraw.Professional.Constants.VdConstFill.VdFillModeSolid);
-                            circle2.PenColor.Red = 255; circle2.PenColor.Green = 0; circle2.PenColor.Blue = 0;
-
-                            circle2.Draw(render);
-
-
-                            vdPolyline divide = new vdPolyline(this.vectorDrawBaseControl1.ActiveDocument);
+                        vdPolyline divide = new vdPolyline(this.vectorDrawBaseControl1.ActiveDocument);
 
 
 
 
-                        }
                     }
                 }
-
-
-        
-
-         
+            }
         }
-
         public void selectRooms(VectorDraw.Render.vdRender render)
         {
             
@@ -995,6 +1019,45 @@ namespace PathFinder
 
         private void splitContainer3_SplitterMoved(object sender, SplitterEventArgs e)
         {
+
+        }
+
+        private void vectorDrawBaseControl1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void vectorDrawBaseControl1_Move(object sender, EventArgs e)
+        {
+
+        }
+
+        private void vectorDrawBaseControl1_MouseMove(object sender, MouseEventArgs e)
+        {
+            //DataGridViewSelectedRowCollection drselect = analysisRouteControl1.sequenceGroupDataGridView.SelectedRows;
+            //if (drselect.Count == 0)
+            //{
+            //    SelectFlg = true;
+            //    this.vectorDrawBaseControl1.ActiveDocument.Document.Update();
+            //    this.vectorDrawBaseControl1.ActiveDocument.Document.Redraw(true);
+            //}
+
+        }
+
+        private void PathFinderForm_Load(object sender, EventArgs e)
+        {
+            this.vectorDrawBaseControl1.MouseWheel += VectorDrawBaseControl1_MouseWheel;
+        }
+
+        private void VectorDrawBaseControl1_MouseWheel(object sender, MouseEventArgs e)
+        {
+           // DataGridViewSelectedRowCollection drselect = analysisRouteControl1.sequenceGroupDataGridView.SelectedRows;
+           //if ( drselect.Count == 0)
+           // {
+           //     SelectFlg = true;
+           //     this.vectorDrawBaseControl1.ActiveDocument.Document.Update();
+           //     this.vectorDrawBaseControl1.ActiveDocument.Document.Redraw(true);
+           // }
 
         }
     }
