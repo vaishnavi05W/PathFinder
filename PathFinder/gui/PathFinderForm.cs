@@ -43,7 +43,7 @@ namespace PathFinder
         vdPolyline routeLine = null;
         Thread analysisThread = null;
         private vdRender render;
-     
+        private bool IsErase = false;
         private Stopwatch watch = new Stopwatch();
         public PathFinderForm()
         {
@@ -267,6 +267,7 @@ namespace PathFinder
         } 
         public void SelectAllRoute()
         {
+            IsErase = false;
             analysisRouteControl1.sequenceGroupDataGridView.ClearSelection();
             this.vectorDrawBaseControl1.ActiveDocument.Document.Update();
             this.vectorDrawBaseControl1.ActiveDocument.Document.Redraw(true);
@@ -501,10 +502,12 @@ namespace PathFinder
         }
         public void drawRoute(VectorDraw.Render.vdRender render)
         {
+            var eras = this.ActiveControl.Name;
             var doc = this.vectorDrawBaseControl1.ActiveDocument;
             DataGridViewSelectedRowCollection drselect = analysisRouteControl1.sequenceGroupDataGridView.SelectedRows;
-            if (drselect.Count == 0)
+            if (drselect.Count == 0 && !IsErase)
             {
+                
                 foreach (var sequenceGroup in info.sequenceGroups)
                 {
                     info.routes = sequenceGroup.getShortestPaths(doc);
@@ -593,7 +596,7 @@ namespace PathFinder
                 {
                     foreach (Room room in info.selectRooms)
                     {
-                        if (room.roomBoundary != null)
+                        if ( room != null && room.roomBoundary != null)
                         {
 
                             vdPolyline polyline = (vdPolyline)room.roomBoundary.Clone(this.vectorDrawBaseControl1.ActiveDocument);
@@ -707,6 +710,7 @@ namespace PathFinder
             info.routes = new List<vdPolyline>();
             clearTriagle();
             lstCacheTriangle = new List<vdPolyline>();
+            IsErase = true;
             this.vectorDrawBaseControl1.ActiveDocument.Update();
             this.vectorDrawBaseControl1.ActiveDocument.Redraw(true);
 
@@ -1046,8 +1050,7 @@ namespace PathFinder
 
         private void PathFinderForm_Load(object sender, EventArgs e)
         {
-            
-
+            this.vectorDrawBaseControl1.MouseWheel += VectorDrawBaseControl1_MouseWheel;
         }
 
         private void VectorDrawBaseControl1_MouseWheel(object sender, MouseEventArgs e)
@@ -1059,11 +1062,6 @@ namespace PathFinder
            //     this.vectorDrawBaseControl1.ActiveDocument.Document.Update();
            //     this.vectorDrawBaseControl1.ActiveDocument.Document.Redraw(true);
            // }
-
-        }
-
-        private void tabControl4_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }

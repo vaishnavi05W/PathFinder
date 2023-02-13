@@ -327,7 +327,7 @@
         {
             DataGridViewSelectedRowCollection rows = this.sequenceSettingdataGridView.SelectedRows;
             foreach (DataGridViewRow row in rows)
-            { 
+            {
                 this.info.sequenceGroups.RemoveAll(d => d.definedSequence.getNames() == row.Cells[2].Value.ToString());
                 this.sequenceSettingdataGridView.Rows.Remove(row);
             }
@@ -342,7 +342,7 @@
             sg.definedSequence.name = "DefinedSequence" + this.info.sequenceGroups.Count;
             foreach (var item in this.listBox1.Items) sg.definedSequence.roomList.Add((RoomAndGroupObject)item);
             foreach (var ds in info.sequenceGroups) if (ds.definedSequence.getNames() == sg.definedSequence.getNames()) return;
-            this.sequenceSettingdataGridView.Rows.Add(new object[] { sg, sg.definedSequence.frequency, sg.definedSequence.getNames()});
+            this.sequenceSettingdataGridView.Rows.Add(new object[] { sg, sg.definedSequence.frequency, sg.definedSequence.getNames() });
             info.sequenceGroups.Add(sg);
             sequenceGroupChangedReceiveMsg(this, e);
         }
@@ -373,6 +373,175 @@
         private void sequenceSettingdataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
         }
-    }
 
+      
+
+        private void sequenceSettingdataGridView_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+
+        }
+
+        private void sequenceSettingdataGridView_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if (e.StateChanged != DataGridViewElementStates.Selected) return;
+            if (sequenceSettingdataGridView.SelectedRows != null && sequenceSettingdataGridView.SelectedRows.Count == 1)
+            {
+                tsb_edit.Visible = true;
+            }
+            else
+                tsb_edit.Visible = false;
+        }
+
+        private void SequenceSettingControlcs_Load(object sender, EventArgs e)
+        {
+            tsb_edit.Visible = false;
+            sequenceSettingdataGridView.ClearSelection();
+        }
+        private bool isEditting()
+        {
+            foreach (DataGridViewRow dgr in sequenceSettingdataGridView.Rows)
+            {
+                if (dgr.DefaultCellStyle.BackColor == Color.YellowGreen)
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            if (sequenceSettingdataGridView.SelectedRows != null && sequenceSettingdataGridView.SelectedRows.Count == 1)
+            {
+                if (isEditting())
+                {
+                    if (this.listBox1.Items.Count == 0)
+                    {
+                        MessageBox.Show("선택된 룸이 없습니다.");
+                        return;
+                    }
+                    foreach (DataGridViewRow dgr in sequenceSettingdataGridView.Rows)
+                    {
+
+                        if (dgr.DefaultCellStyle.BackColor == Color.YellowGreen)
+                        {
+
+                            //List<Room> rooms = new List<Room>();
+                            //foreach (Room r in this.listBox1.Items) rooms.Add(r);
+                            //var activeRG = dgr.Cells[0].Value.ToString();
+
+                            if (this.listBox1.Items.Count == 0) return;
+                            SequenceGroup sg = new SequenceGroup();
+                            sg.definedSequence = new DefinedSequence();
+                            sg.definedSequence.name = dgr.Cells[0].Value.ToString() ;
+                            sg.definedSequence.frequency = Convert.ToInt32((dgr.Cells[1].Value.ToString()));
+                            foreach (var item in this.listBox1.Items) 
+                                sg.definedSequence.roomList.Add((RoomAndGroupObject)item);
+                            foreach (var ds in info.sequenceGroups)
+                            {
+                                if (ds.definedSequence.name != sg.definedSequence.name)
+                                {
+                                    if (ds.definedSequence.getNames() == sg.definedSequence.getNames())
+                                    {
+                                        MessageBox.Show("이 시퀀스 목록은 이미 포함되어 있습니다.");
+                                        return;
+                                    }
+                                } 
+                            } 
+                           
+                            foreach (var ds in info.sequenceGroups)
+                            {
+                                if (ds.definedSequence.name == sg.definedSequence.name)
+                                {
+                                    ds.definedSequence.frequency = sg.definedSequence.frequency;  
+                                    ds.definedSequence.roomList = sg.definedSequence.roomList;
+                                }
+                            }
+                            dgr.Cells[2].Value = sg.definedSequence.getNames();
+                            sequenceGroupChangedReceiveMsg(this, e); 
+                            this.listBox1.Items.Clear();
+                          
+                        }
+                        dgr.DefaultCellStyle.BackColor = Color.White;
+                        dgr.DefaultCellStyle.SelectionBackColor = sequenceSettingdataGridView.RowsDefaultCellStyle.SelectionBackColor;
+                    }
+
+                    OtherActionState(true);
+                    tsb_edit.Image = Properties.Resources.EditStart;
+                }
+                else
+                {
+                    listBox1.Items.Clear();
+                    var lst = sequenceSettingdataGridView.SelectedRows[0].Cells[2].Value.ToString().GetSplitList();
+                    foreach (var data in GetObject(lst))
+                    {
+                        listBox1.Items.Add(data);
+                    }
+                    listBox1.Update();
+
+
+
+                    foreach (DataGridViewRow dgr in sequenceSettingdataGridView.Rows)
+                    {
+                        if (dgr == this.sequenceSettingdataGridView.CurrentRow)
+                        {
+                            this.sequenceSettingdataGridView.SelectedRows[0].DefaultCellStyle.BackColor = this.sequenceSettingdataGridView.SelectedRows[0].DefaultCellStyle.SelectionBackColor = Color.YellowGreen;
+                        
+                        }
+                        else
+                        {
+                            dgr.DefaultCellStyle.BackColor = Color.White;
+                            dgr.DefaultCellStyle.SelectionBackColor = sequenceSettingdataGridView.RowsDefaultCellStyle.SelectionBackColor;
+                        }
+                    }
+                    OtherActionState(false);
+                    tsb_edit.Image = Properties.Resources.Editting;
+                }
+            }
+        }
+        private List<object> GetObject(List<string> lst)
+        {
+            List<object> res = new List<object>();
+            if (lst != null)
+            {
+
+                if (roomListDataGridView.Rows.Count > 0)
+                {
+                    foreach (var l in lst)
+                    {
+                        bool isContainRoom = false;
+                        foreach (DataGridViewRow dgr in roomListDataGridView.Rows)
+                        {
+                            if (dgr.Cells[0].Value != null && l == dgr.Cells[0].Value.ToString())
+                            {
+                                res.Add(dgr.Cells[0].Value);
+                                isContainRoom= true;
+                                break;
+                            }
+                        }
+                        if (!isContainRoom)
+                        {
+                            foreach (DataGridViewRow dgr in roomGroupDataGridView1.Rows)
+                            {
+                                if (dgr.Cells[0].Value != null && l == dgr.Cells[0].Value.ToString())
+                                {  
+                                    RoomGroup rg = info.roomGroups[dgr.Index]; 
+                                    rg.name = l;
+                                    res.Add(rg); 
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            return res;
+        }
+        private void OtherActionState(bool enable)
+        {
+            toolStripButton5.Enabled = toolStripButton6.Enabled = toolStripButton7.Enabled = enable;
+            foreach (DataGridViewRow dgr in sequenceSettingdataGridView.Rows)
+                (dgr.Cells[0] as DataGridViewTextBoxCell).ReadOnly = (dgr.Cells[1] as DataGridViewTextBoxCell).ReadOnly = !enable;
+        }
+    }
 }

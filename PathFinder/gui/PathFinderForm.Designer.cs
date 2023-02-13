@@ -61,16 +61,15 @@ namespace PathFinder
             this.tabPage9 = new System.Windows.Forms.TabPage();
             this.tabControl5 = new System.Windows.Forms.TabControl();
             this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.analysisRouteControl1 = new PathFinder.gui.AnalysisRouteControl();
             this.tabPage10 = new System.Windows.Forms.TabPage();
             this.tabControl4 = new System.Windows.Forms.TabControl();
             this.tabPage11 = new System.Windows.Forms.TabPage();
-            this.sequenceSettingControlcs1 = new PathFinder.gui.SequenceSettingControlcs();
             this.tabPage12 = new System.Windows.Forms.TabPage();
-            this.roomGroupControl1 = new PathFinder.gui.RoomGroupControl();
             this.tabPage15 = new System.Windows.Forms.TabPage();
+            this.analysisRouteControl1 = new PathFinder.gui.AnalysisRouteControl();
+            this.sequenceSettingControlcs1 = new PathFinder.gui.SequenceSettingControlcs();
+            this.roomGroupControl1 = new PathFinder.gui.RoomGroupControl();
             this.mainRouteControl1 = new PathFinder.gui.MainRouteControl();
-            this.SAMOO = new System.Windows.Forms.ToolStripLabel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -101,7 +100,7 @@ namespace PathFinder
             this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1479, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1924, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -194,11 +193,10 @@ namespace PathFinder
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
-            this.toolStripButton4,
-            this.SAMOO});
+            this.toolStripButton4});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1479, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1924, 31);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -228,9 +226,9 @@ namespace PathFinder
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.seletionLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 725);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 1039);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1479, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1924, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -314,8 +312,8 @@ namespace PathFinder
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.tabControl3);
-            this.splitContainer3.Size = new System.Drawing.Size(1474, 646);
-            this.splitContainer3.SplitterDistance = 930;
+            this.splitContainer3.Size = new System.Drawing.Size(1919, 960);
+            this.splitContainer3.SplitterDistance = 1211;
             this.splitContainer3.TabIndex = 6;
             this.splitContainer3.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer3_SplitterMoved);
             // 
@@ -326,7 +324,7 @@ namespace PathFinder
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(930, 646);
+            this.tabControl1.Size = new System.Drawing.Size(1211, 960);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage2
@@ -335,7 +333,7 @@ namespace PathFinder
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(922, 620);
+            this.tabPage2.Size = new System.Drawing.Size(1203, 934);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "IFC file";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -349,7 +347,7 @@ namespace PathFinder
             this.vectorDrawBaseControl1.Location = new System.Drawing.Point(3, 3);
             this.vectorDrawBaseControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.vectorDrawBaseControl1.Name = "vectorDrawBaseControl1";
-            this.vectorDrawBaseControl1.Size = new System.Drawing.Size(916, 614);
+            this.vectorDrawBaseControl1.Size = new System.Drawing.Size(1197, 928);
             this.vectorDrawBaseControl1.TabIndex = 1;
             this.vectorDrawBaseControl1.DrawAfter += new VectorDraw.Professional.Control.DrawAfterEventHandler(this.vectorDrawBaseControl1_DrawAfter);
             this.vectorDrawBaseControl1.GripSelectionModified += new VectorDraw.Professional.Control.GripSelectionModifiedEventHandler(this.vectorDrawBaseControl1_GripSelectionModified);
@@ -366,7 +364,7 @@ namespace PathFinder
             this.tabControl3.Location = new System.Drawing.Point(0, 0);
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(540, 646);
+            this.tabControl3.Size = new System.Drawing.Size(704, 960);
             this.tabControl3.TabIndex = 2;
             // 
             // tabPage9
@@ -375,7 +373,7 @@ namespace PathFinder
             this.tabPage9.Location = new System.Drawing.Point(4, 22);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(532, 620);
+            this.tabPage9.Size = new System.Drawing.Size(696, 934);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Analysis";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -387,7 +385,7 @@ namespace PathFinder
             this.tabControl5.Location = new System.Drawing.Point(3, 3);
             this.tabControl5.Name = "tabControl5";
             this.tabControl5.SelectedIndex = 0;
-            this.tabControl5.Size = new System.Drawing.Size(526, 614);
+            this.tabControl5.Size = new System.Drawing.Size(690, 928);
             this.tabControl5.TabIndex = 0;
             // 
             // tabPage17
@@ -396,19 +394,10 @@ namespace PathFinder
             this.tabPage17.Location = new System.Drawing.Point(4, 22);
             this.tabPage17.Name = "tabPage17";
             this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(518, 588);
+            this.tabPage17.Size = new System.Drawing.Size(682, 902);
             this.tabPage17.TabIndex = 2;
             this.tabPage17.Text = "Sequence";
             this.tabPage17.UseVisualStyleBackColor = true;
-            // 
-            // analysisRouteControl1
-            // 
-            this.analysisRouteControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.analysisRouteControl1.Location = new System.Drawing.Point(3, 3);
-            this.analysisRouteControl1.Margin = new System.Windows.Forms.Padding(5);
-            this.analysisRouteControl1.Name = "analysisRouteControl1";
-            this.analysisRouteControl1.Size = new System.Drawing.Size(512, 582);
-            this.analysisRouteControl1.TabIndex = 1;
             // 
             // tabPage10
             // 
@@ -416,7 +405,7 @@ namespace PathFinder
             this.tabPage10.Location = new System.Drawing.Point(4, 22);
             this.tabPage10.Name = "tabPage10";
             this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(532, 620);
+            this.tabPage10.Size = new System.Drawing.Size(696, 934);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Setting";
             this.tabPage10.UseVisualStyleBackColor = true;
@@ -430,9 +419,8 @@ namespace PathFinder
             this.tabControl4.Location = new System.Drawing.Point(3, 3);
             this.tabControl4.Name = "tabControl4";
             this.tabControl4.SelectedIndex = 0;
-            this.tabControl4.Size = new System.Drawing.Size(526, 614);
+            this.tabControl4.Size = new System.Drawing.Size(690, 928);
             this.tabControl4.TabIndex = 0;
-            this.tabControl4.SelectedIndexChanged += new System.EventHandler(this.tabControl4_SelectedIndexChanged);
             // 
             // tabPage11
             // 
@@ -440,19 +428,10 @@ namespace PathFinder
             this.tabPage11.Location = new System.Drawing.Point(4, 22);
             this.tabPage11.Name = "tabPage11";
             this.tabPage11.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage11.Size = new System.Drawing.Size(518, 588);
+            this.tabPage11.Size = new System.Drawing.Size(682, 902);
             this.tabPage11.TabIndex = 0;
             this.tabPage11.Text = "Sequence";
             this.tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // sequenceSettingControlcs1
-            // 
-            this.sequenceSettingControlcs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sequenceSettingControlcs1.Location = new System.Drawing.Point(3, 3);
-            this.sequenceSettingControlcs1.Margin = new System.Windows.Forms.Padding(5);
-            this.sequenceSettingControlcs1.Name = "sequenceSettingControlcs1";
-            this.sequenceSettingControlcs1.Size = new System.Drawing.Size(512, 582);
-            this.sequenceSettingControlcs1.TabIndex = 13;
             // 
             // tabPage12
             // 
@@ -460,19 +439,10 @@ namespace PathFinder
             this.tabPage12.Location = new System.Drawing.Point(4, 22);
             this.tabPage12.Name = "tabPage12";
             this.tabPage12.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage12.Size = new System.Drawing.Size(518, 585);
+            this.tabPage12.Size = new System.Drawing.Size(682, 902);
             this.tabPage12.TabIndex = 1;
             this.tabPage12.Text = "Room Group";
             this.tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // roomGroupControl1
-            // 
-            this.roomGroupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roomGroupControl1.Location = new System.Drawing.Point(3, 3);
-            this.roomGroupControl1.Margin = new System.Windows.Forms.Padding(5);
-            this.roomGroupControl1.Name = "roomGroupControl1";
-            this.roomGroupControl1.Size = new System.Drawing.Size(512, 579);
-            this.roomGroupControl1.TabIndex = 10;
             // 
             // tabPage15
             // 
@@ -480,10 +450,37 @@ namespace PathFinder
             this.tabPage15.Location = new System.Drawing.Point(4, 22);
             this.tabPage15.Name = "tabPage15";
             this.tabPage15.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage15.Size = new System.Drawing.Size(518, 585);
+            this.tabPage15.Size = new System.Drawing.Size(682, 902);
             this.tabPage15.TabIndex = 2;
             this.tabPage15.Text = "Main Route";
             this.tabPage15.UseVisualStyleBackColor = true;
+            // 
+            // analysisRouteControl1
+            // 
+            this.analysisRouteControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.analysisRouteControl1.Location = new System.Drawing.Point(3, 3);
+            this.analysisRouteControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.analysisRouteControl1.Name = "analysisRouteControl1";
+            this.analysisRouteControl1.Size = new System.Drawing.Size(676, 896);
+            this.analysisRouteControl1.TabIndex = 1;
+            // 
+            // sequenceSettingControlcs1
+            // 
+            this.sequenceSettingControlcs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sequenceSettingControlcs1.Location = new System.Drawing.Point(3, 3);
+            this.sequenceSettingControlcs1.Margin = new System.Windows.Forms.Padding(5);
+            this.sequenceSettingControlcs1.Name = "sequenceSettingControlcs1";
+            this.sequenceSettingControlcs1.Size = new System.Drawing.Size(676, 896);
+            this.sequenceSettingControlcs1.TabIndex = 13;
+            // 
+            // roomGroupControl1
+            // 
+            this.roomGroupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.roomGroupControl1.Location = new System.Drawing.Point(3, 3);
+            this.roomGroupControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.roomGroupControl1.Name = "roomGroupControl1";
+            this.roomGroupControl1.Size = new System.Drawing.Size(676, 896);
+            this.roomGroupControl1.TabIndex = 10;
             // 
             // mainRouteControl1
             // 
@@ -491,32 +488,22 @@ namespace PathFinder
             this.mainRouteControl1.Location = new System.Drawing.Point(3, 3);
             this.mainRouteControl1.Margin = new System.Windows.Forms.Padding(5);
             this.mainRouteControl1.Name = "mainRouteControl1";
-            this.mainRouteControl1.Size = new System.Drawing.Size(512, 579);
+            this.mainRouteControl1.Size = new System.Drawing.Size(676, 896);
             this.mainRouteControl1.TabIndex = 11;
-            // 
-            // SAMOO
-            // 
-            this.SAMOO.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.SAMOO.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SAMOO.ForeColor = System.Drawing.Color.Blue;
-            this.SAMOO.Name = "SAMOO";
-            this.SAMOO.Size = new System.Drawing.Size(69, 28);
-            this.SAMOO.Tag = "SAMOO";
-            this.SAMOO.Text = "SAMOO";
             // 
             // PathFinderForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1479, 747);
+            this.ClientSize = new System.Drawing.Size(1924, 1061);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.splitContainer3);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PathFinderForm";
-            this.Text = "Path Finder";
+            this.Text = "병실 - 경로 분석 Hospital Room - Route Analysis(1.1)";
             this.Load += new System.EventHandler(this.PathFinderForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -591,6 +578,5 @@ namespace PathFinder
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripMenuItem cADFormatToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jPEGToolStripMenuItem;
-        private System.Windows.Forms.ToolStripLabel SAMOO;
     }
 }

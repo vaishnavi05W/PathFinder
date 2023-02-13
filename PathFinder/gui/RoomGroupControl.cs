@@ -82,7 +82,7 @@
             foreach (RoomGroup rg in roomGroups)
             {
                 object[] obs = new object[] { rg, rg.getOrder(), rg.getRooms() };
-              roomGroupDataGridView.Rows.Add(obs);
+                roomGroupDataGridView.Rows.Add(obs);
             }
         }
 
@@ -90,7 +90,7 @@
 
         private void addRoomGroup(object sender, EventArgs e)
         {
-            
+
 
 
         }
@@ -171,14 +171,14 @@
 
 
 
-           
+
 
         }
 
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
@@ -309,17 +309,17 @@
 
         private void roomGroupDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
 
-            if (e.RowIndex == -1) return; 
+
+            if (e.RowIndex == -1) return;
             Console.WriteLine(e.RowIndex + " " + e.ColumnIndex);
 
 
             //RoomGroup rg = (RoomGroup)this.roomGroupDataGridView.Rows[e.RowIndex].Cells[0].Value;
-            string name = (string)this.roomGroupDataGridView.Rows[e.RowIndex].Cells[0].Value;
-             RoomGroup rg = info.roomGroups[e.RowIndex];
-             rg.name = name;
-            
+            string name = (string)this.roomGroupDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString();
+            RoomGroup rg = info.roomGroups[e.RowIndex];
+            rg.name = name;
+
             Console.WriteLine("rg1 " + rg.isOrder);
 
             string isOrder = (string)this.roomGroupDataGridView.Rows[e.RowIndex].Cells[1].Value;
@@ -338,13 +338,13 @@
                     if (r1 == r2)
                     {
                         MessageBox.Show("중복된 값이 포함되어 있어 Non-Order 옵션으로 변경할 수 없습니다.");
-                       break;
+                        break;
                     }
 
                 }
 
             }
-       
+
 
         }
 
@@ -415,20 +415,164 @@
 
         private void toolStrip3_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-           
+
+        }
+        private bool isEditting()
+        {
+            foreach (DataGridViewRow dgr in roomGroupDataGridView.Rows)
+            {
+                if (dgr.DefaultCellStyle.BackColor == Color.YellowGreen)
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (roomGroupDataGridView.SelectedRows != null && roomGroupDataGridView.SelectedRows.Count == 1)
+            {
+                if (isEditting())
+                {
+                    if (this.roomListBox.Items.Count == 0)
+                    {
+                        MessageBox.Show("선택된 룸이 없습니다.");
+                        return;
+                    }
+                    foreach (DataGridViewRow dgr in roomGroupDataGridView.Rows)
+                    {
+
+                        if (dgr.DefaultCellStyle.BackColor == Color.YellowGreen)
+                        {
+                            List<Room> rooms = new List<Room>();
+                            foreach (Room r in this.roomListBox.Items) rooms.Add(r);
+                            bool isOrder = false;
+                            if (this.groupOrderComboBox.SelectedIndex == 0) isOrder = true;
+                            else isOrder = false;
+                            var activeRG = dgr.Cells[0].Value.ToString();
+                            RoomGroup rg = new RoomGroup(activeRG, rooms, isOrder);
+
+                            foreach (var rgo in this.roomGroups)
+                            {
+                                if (rgo.name == rg.name)
+                                {
+                                    rgo.isOrder = isOrder;
+                                    rgo.roomList = rooms;
+                                    break;
+                                }
+                            }
+                            dgr.Cells[1].Value = rg.getOrder();
+                            dgr.Cells[2].Value = rg.getRooms();
+                            this.roomListBox.Items.Clear();
+                        }
+                        dgr.DefaultCellStyle.BackColor = Color.White;
+                        dgr.DefaultCellStyle.SelectionBackColor = roomGroupDataGridView.RowsDefaultCellStyle.SelectionBackColor;
+                    }
+
+                    OtherActionState(true);
+                    tsb_edit.Image = Properties.Resources.EditStart;
+                }
+                else
+                {
+                    roomListBox.Items.Clear();
+                    var lst = roomGroupDataGridView.SelectedRows[0].Cells[2].Value.ToString().GetSplitList();
+                    foreach (var data in GetObject(lst))
+                    {
+                        roomListBox.Items.Add(data);
+                    }
+                    roomListBox.Update();
+
+                   
+
+                    foreach (DataGridViewRow dgr in roomGroupDataGridView.Rows)
+                    {
+                        if (dgr == this.roomGroupDataGridView.CurrentRow)
+                        {
+                            this.roomGroupDataGridView.SelectedRows[0].DefaultCellStyle.BackColor = this.roomGroupDataGridView.SelectedRows[0].DefaultCellStyle.SelectionBackColor = Color.YellowGreen;
+                            if ((dgr.Cells[1] as DataGridViewComboBoxCell).Value.ToString() == "Order")
+                            {
+                                this.groupOrderComboBox.SelectedIndex = 0;
+                            }
+                            else
+                            {
+                                this.groupOrderComboBox.SelectedIndex = 1;
+
+                            }
+                        }
+                        else
+                        {
+                            dgr.DefaultCellStyle.BackColor = Color.White;
+                            dgr.DefaultCellStyle.SelectionBackColor = roomGroupDataGridView.RowsDefaultCellStyle.SelectionBackColor;
+                        }
+                    }
+                    OtherActionState(false);
+                    tsb_edit.Image = Properties.Resources.Editting;
+                }
+            }
+        }
+        private void OtherActionState(bool enable)
+        {
+            toolStripButton4.Enabled = toolStripButton5.Enabled = toolStripButton10.Enabled = enable; 
+            foreach (DataGridViewRow dgr in roomGroupDataGridView.Rows)
+                (dgr.Cells[0] as DataGridViewTextBoxCell).ReadOnly = (dgr.Cells[1] as DataGridViewComboBoxCell).ReadOnly = !enable;
+        }
+        private List<object> GetObject(List<string> lst)
+        {
+            List<object> res = new List<object>();
+            if (lst != null)
+            {
+                
+                if (roomListDataGridView.Rows.Count > 0)
+                {
+                    foreach (var l in lst)
+                    {
+                        foreach (DataGridViewRow dgr in roomListDataGridView.Rows)
+                        {
+                            if (dgr.Cells[0].Value != null && l == dgr.Cells[0].Value.ToString())
+                            {
+                                res.Add(dgr.Cells[0].Value);
+                            }
+                        }
+                    }
+                }
+            }
+            return res;
+        }
+
+
+        private void roomGroupDataGridView_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            if (e.StateChanged != DataGridViewElementStates.Selected) return;
+            if (roomGroupDataGridView.SelectedRows != null && roomGroupDataGridView.SelectedRows.Count == 1)
+            {
+                tsb_edit.Visible = true; 
+            }
+            else 
+                tsb_edit.Visible = false;  
+        }
+
+        private void RoomGroupControl_Load(object sender, EventArgs e)
+        {
+            tsb_edit.Visible = false;
+            roomGroupDataGridView.ClearSelection();
+        }
+    }
+    public static class Extensions
+    {
+        public static List<string> GetSplitList(this string value)
+        {
+            List<string> val =null;
+            if (!string.IsNullOrEmpty(value) )
+            {
+                val = (value.TrimEnd().Split('+')).ToList();
+                
+            }
+            return val;
         }
     }
 }
 
-            /*
-            private void SaveRoomGroupList(object sender, EventArgs e)
-    {
-       //Display in Sequence settings
-       this.dataGridView5.DataSource = Globalval.RGList;
-       this.listBox3.Items.Clear();
-       //   MessageBox.Show("Successfully saved", " Room Group", MessageBoxButtons.OK, MessageBoxIcon.Information);
-    }
-    */
     
     
   

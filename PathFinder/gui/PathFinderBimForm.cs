@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using vdControls;
 using vdIFC;
 using VectorDraw.Actions;
 using VectorDraw.Geometry;
@@ -822,11 +821,6 @@ namespace PathFinder
        
 
             }
-        }
-
-        private void PathFinderBimForm_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -45,6 +45,7 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.tsb_edit = new System.Windows.Forms.ToolStripButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.sequenceSettingdataGridView = new System.Windows.Forms.DataGridView();
             this.SequenceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,8 +92,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(379, 384);
-            this.splitContainer1.SplitterDistance = 162;
+            this.splitContainer1.Size = new System.Drawing.Size(818, 514);
+            this.splitContainer1.SplitterDistance = 218;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 16;
             // 
@@ -104,7 +105,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(379, 162);
+            this.groupBox1.Size = new System.Drawing.Size(818, 218);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room List";
@@ -122,7 +123,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(375, 145);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(814, 201);
             this.tableLayoutPanel2.TabIndex = 18;
             // 
             // tableLayoutPanel3
@@ -138,7 +139,7 @@
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(185, 143);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(405, 199);
             this.tableLayoutPanel3.TabIndex = 19;
             // 
             // roomGroupDataGridView1
@@ -153,13 +154,13 @@
             this.Column17});
             this.roomGroupDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roomGroupDataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.roomGroupDataGridView1.Location = new System.Drawing.Point(2, 73);
+            this.roomGroupDataGridView1.Location = new System.Drawing.Point(2, 101);
             this.roomGroupDataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.roomGroupDataGridView1.Name = "roomGroupDataGridView1";
             this.roomGroupDataGridView1.RowHeadersWidth = 20;
             this.roomGroupDataGridView1.RowTemplate.Height = 28;
             this.roomGroupDataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.roomGroupDataGridView1.Size = new System.Drawing.Size(181, 68);
+            this.roomGroupDataGridView1.Size = new System.Drawing.Size(401, 96);
             this.roomGroupDataGridView1.TabIndex = 1;
             this.roomGroupDataGridView1.SelectionChanged += new System.EventHandler(this.roomGroupDataGridView_SelectionChanged);
             // 
@@ -202,7 +203,7 @@
             this.roomListDataGridView.RowHeadersWidth = 20;
             this.roomListDataGridView.RowTemplate.Height = 28;
             this.roomListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.roomListDataGridView.Size = new System.Drawing.Size(181, 67);
+            this.roomListDataGridView.Size = new System.Drawing.Size(401, 95);
             this.roomListDataGridView.TabIndex = 0;
             this.roomListDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomListDataGridView_CellClick);
             this.roomListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomListDataGridView_CellContentClick);
@@ -219,11 +220,11 @@
             // 
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(189, 2);
+            this.listBox1.Location = new System.Drawing.Point(409, 2);
             this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox1.Size = new System.Drawing.Size(184, 141);
+            this.listBox1.Size = new System.Drawing.Size(403, 197);
             this.listBox1.TabIndex = 5;
             // 
             // groupBox2
@@ -234,7 +235,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(1);
-            this.groupBox2.Size = new System.Drawing.Size(379, 220);
+            this.groupBox2.Size = new System.Drawing.Size(818, 294);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Defined Sequence";
@@ -252,7 +253,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.43284F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.56716F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(377, 205);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(816, 279);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // toolStrip3
@@ -262,10 +263,11 @@
             this.toolStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripButton7});
+            this.toolStripButton7,
+            this.tsb_edit});
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(377, 27);
+            this.toolStrip3.Size = new System.Drawing.Size(816, 37);
             this.toolStrip3.TabIndex = 3;
             this.toolStrip3.Text = "toolStrip3";
             this.toolStrip3.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip3_ItemClicked);
@@ -276,7 +278,7 @@
             this.toolStripButton5.Image = global::PathFinder.Properties.Resources.plus;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(28, 24);
+            this.toolStripButton5.Size = new System.Drawing.Size(28, 34);
             this.toolStripButton5.Text = "Add";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
@@ -286,7 +288,7 @@
             this.toolStripButton6.Image = global::PathFinder.Properties.Resources.minus;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(28, 24);
+            this.toolStripButton6.Size = new System.Drawing.Size(28, 34);
             this.toolStripButton6.Text = "Remove";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
@@ -296,19 +298,30 @@
             this.toolStripButton7.Image = global::PathFinder.Properties.Resources.Main_Save;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(28, 24);
+            this.toolStripButton7.Size = new System.Drawing.Size(28, 34);
             this.toolStripButton7.Text = "Save";
             this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // tsb_edit
+            // 
+            this.tsb_edit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_edit.Image = global::PathFinder.Properties.Resources.edit;
+            this.tsb_edit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_edit.Name = "tsb_edit";
+            this.tsb_edit.Size = new System.Drawing.Size(28, 34);
+            this.tsb_edit.Text = "toolStripButton8";
+            this.tsb_edit.Visible = false;
+            this.tsb_edit.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.sequenceSettingdataGridView);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(2, 29);
+            this.groupBox6.Location = new System.Drawing.Point(2, 39);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox6.Size = new System.Drawing.Size(373, 174);
+            this.groupBox6.Size = new System.Drawing.Size(812, 238);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Sequence List";
@@ -325,14 +338,17 @@
             this.sequenceSettingdataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.sequenceSettingdataGridView.Location = new System.Drawing.Point(2, 15);
             this.sequenceSettingdataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.sequenceSettingdataGridView.MultiSelect = false;
             this.sequenceSettingdataGridView.Name = "sequenceSettingdataGridView";
             this.sequenceSettingdataGridView.RowHeadersWidth = 20;
             this.sequenceSettingdataGridView.RowTemplate.Height = 28;
             this.sequenceSettingdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.sequenceSettingdataGridView.Size = new System.Drawing.Size(369, 157);
+            this.sequenceSettingdataGridView.Size = new System.Drawing.Size(808, 221);
             this.sequenceSettingdataGridView.TabIndex = 0;
             this.sequenceSettingdataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.sequenceSettingdataGridView_CellEndEdit);
+            this.sequenceSettingdataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.sequenceSettingdataGridView_CellStateChanged);
             this.sequenceSettingdataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.sequenceSettingdataGridView_CellValueChanged_1);
+            this.sequenceSettingdataGridView.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.sequenceSettingdataGridView_RowStateChanged);
             // 
             // SequenceName
             // 
@@ -352,12 +368,11 @@
             // 
             // Column39
             // 
-            this.Column39.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Column39.HeaderText = "SequenceRooms";
             this.Column39.MinimumWidth = 400;
             this.Column39.Name = "Column39";
             this.Column39.ReadOnly = true;
-            this.Column39.Width = 400;
+            this.Column39.Width = 590;
             // 
             // toolStrip1
             // 
@@ -371,13 +386,13 @@
             this.toolStripSeparator1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(383, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(822, 31);
             this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel2
             // 
-            this.toolStripLabel2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripLabel2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(70, 28);
             this.toolStripLabel2.Text = "Sequence :";
@@ -435,7 +450,8 @@
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SequenceSettingControlcs";
-            this.Size = new System.Drawing.Size(383, 427);
+            this.Size = new System.Drawing.Size(822, 557);
+            this.Load += new System.EventHandler(this.SequenceSettingControlcs_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -487,6 +503,7 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView sequenceSettingdataGridView;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolStripButton tsb_edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn SequenceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Frequency;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column39;
