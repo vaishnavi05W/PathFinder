@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.roomListDataGridView = new System.Windows.Forms.DataGridView();
@@ -53,11 +54,12 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.groupOrderComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
             this.mainSplitContainer.Panel1.SuspendLayout();
             this.mainSplitContainer.Panel2.SuspendLayout();
             this.mainSplitContainer.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomListDataGridView)).BeginInit();
@@ -67,7 +69,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.roomGroupDataGridView)).BeginInit();
             this.toolStrip3.SuspendLayout();
             this.toolStrip2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainSplitContainer
@@ -75,8 +76,8 @@
             this.mainSplitContainer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainSplitContainer.Location = new System.Drawing.Point(2, 30);
-            this.mainSplitContainer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainSplitContainer.Location = new System.Drawing.Point(2, 28);
+            this.mainSplitContainer.Margin = new System.Windows.Forms.Padding(2);
             this.mainSplitContainer.Name = "mainSplitContainer";
             this.mainSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -87,20 +88,37 @@
             // mainSplitContainer.Panel2
             // 
             this.mainSplitContainer.Panel2.Controls.Add(this.groupBox2);
-            this.mainSplitContainer.Size = new System.Drawing.Size(357, 524);
-            this.mainSplitContainer.SplitterDistance = 283;
+            this.mainSplitContainer.Size = new System.Drawing.Size(416, 484);
+            this.mainSplitContainer.SplitterDistance = 261;
             this.mainSplitContainer.SplitterWidth = 2;
             this.mainSplitContainer.TabIndex = 12;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(416, 261);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(2, 7);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(353, 274);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(412, 252);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room List";
@@ -113,13 +131,13 @@
             this.tableLayoutPanel2.Controls.Add(this.roomListDataGridView, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.roomListBox, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 15);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 16);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(349, 257);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 7F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 234);
             this.tableLayoutPanel2.TabIndex = 15;
             // 
             // roomListDataGridView
@@ -131,12 +149,12 @@
             this.roomListDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roomListDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.roomListDataGridView.Location = new System.Drawing.Point(2, 2);
-            this.roomListDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roomListDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.roomListDataGridView.Name = "roomListDataGridView";
             this.roomListDataGridView.RowHeadersWidth = 20;
             this.roomListDataGridView.RowTemplate.Height = 28;
             this.roomListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.roomListDataGridView.Size = new System.Drawing.Size(170, 245);
+            this.roomListDataGridView.Size = new System.Drawing.Size(200, 223);
             this.roomListDataGridView.TabIndex = 0;
             this.roomListDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomListDataGridView_CellClick);
             this.roomListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RoomGroup_CellClick);
@@ -152,11 +170,12 @@
             // 
             this.roomListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roomListBox.FormattingEnabled = true;
-            this.roomListBox.Location = new System.Drawing.Point(176, 2);
-            this.roomListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roomListBox.ItemHeight = 12;
+            this.roomListBox.Location = new System.Drawing.Point(206, 2);
+            this.roomListBox.Margin = new System.Windows.Forms.Padding(2);
             this.roomListBox.Name = "roomListBox";
             this.roomListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.roomListBox.Size = new System.Drawing.Size(171, 245);
+            this.roomListBox.Size = new System.Drawing.Size(200, 223);
             this.roomListBox.TabIndex = 4;
             // 
             // groupBox2
@@ -164,10 +183,10 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.groupBox2.Size = new System.Drawing.Size(357, 239);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBox2.Size = new System.Drawing.Size(416, 221);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Room Group";
@@ -179,24 +198,24 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox10, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.toolStrip3, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 14);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 15);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.97772F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.02229F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(355, 224);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(414, 205);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.roomGroupDataGridView);
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox10.Location = new System.Drawing.Point(2, 28);
-            this.groupBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox10.Location = new System.Drawing.Point(2, 26);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox10.Size = new System.Drawing.Size(351, 194);
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox10.Size = new System.Drawing.Size(410, 177);
             this.groupBox10.TabIndex = 6;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Room Group List";
@@ -213,13 +232,13 @@
             this.Column17});
             this.roomGroupDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roomGroupDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.roomGroupDataGridView.Location = new System.Drawing.Point(2, 15);
-            this.roomGroupDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roomGroupDataGridView.Location = new System.Drawing.Point(2, 16);
+            this.roomGroupDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.roomGroupDataGridView.Name = "roomGroupDataGridView";
             this.roomGroupDataGridView.RowHeadersWidth = 20;
             this.roomGroupDataGridView.RowTemplate.Height = 28;
             this.roomGroupDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.roomGroupDataGridView.Size = new System.Drawing.Size(347, 177);
+            this.roomGroupDataGridView.Size = new System.Drawing.Size(406, 159);
             this.roomGroupDataGridView.TabIndex = 0;
             this.roomGroupDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomListDataGridView_CellClick);
             this.roomGroupDataGridView.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.roomGroupDataGridView_CellStateChanged);
@@ -266,8 +285,8 @@
             this.toolStripButton10});
             this.toolStrip3.Location = new System.Drawing.Point(0, 0);
             this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            this.toolStrip3.Size = new System.Drawing.Size(355, 26);
+            this.toolStrip3.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip3.Size = new System.Drawing.Size(414, 24);
             this.toolStrip3.TabIndex = 7;
             this.toolStrip3.Text = "toolStrip3";
             this.toolStrip3.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip3_ItemClicked);
@@ -278,7 +297,7 @@
             this.toolStripButton4.Image = global::PathFinder.Properties.Resources.plus;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(28, 23);
+            this.toolStripButton4.Size = new System.Drawing.Size(28, 21);
             this.toolStripButton4.Text = "Add";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
@@ -288,7 +307,7 @@
             this.toolStripButton5.Image = global::PathFinder.Properties.Resources.minus;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(28, 23);
+            this.toolStripButton5.Size = new System.Drawing.Size(28, 21);
             this.toolStripButton5.Text = "Remove";
             this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
@@ -298,7 +317,7 @@
             this.toolStripButton10.Image = global::PathFinder.Properties.Resources.Main_Save;
             this.toolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton10.Name = "toolStripButton10";
-            this.toolStripButton10.Size = new System.Drawing.Size(28, 23);
+            this.toolStripButton10.Size = new System.Drawing.Size(28, 21);
             this.toolStripButton10.Text = "Save";
             this.toolStripButton10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
@@ -307,6 +326,7 @@
             // 
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
             this.toolStripButton6,
             this.toolStripButton9,
             this.toolStripSeparator2,
@@ -316,7 +336,7 @@
             this.toolStripSeparator1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(362, 31);
+            this.toolStrip2.Size = new System.Drawing.Size(422, 31);
             this.toolStrip2.TabIndex = 13;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -372,7 +392,7 @@
             "Order",
             "Non-Order"});
             this.groupOrderComboBox.Name = "groupOrderComboBox";
-            this.groupOrderComboBox.Size = new System.Drawing.Size(75, 31);
+            this.groupOrderComboBox.Size = new System.Drawing.Size(87, 31);
             this.groupOrderComboBox.Click += new System.EventHandler(this.groupOrderComboBox_Click);
             // 
             // toolStripSeparator1
@@ -380,35 +400,27 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
-            // tableLayoutPanel3
+            // toolStripLabel1
             // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.White;
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.groupBox1, 0, 1);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(357, 283);
-            this.tableLayoutPanel3.TabIndex = 0;
+            this.toolStripLabel1.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(47, 28);
+            this.toolStripLabel1.Text = "Room :";
             // 
             // RoomGroupControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.mainSplitContainer);
             this.Controls.Add(this.toolStrip2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RoomGroupControl";
-            this.Size = new System.Drawing.Size(362, 557);
+            this.Size = new System.Drawing.Size(422, 514);
             this.mainSplitContainer.Panel1.ResumeLayout(false);
             this.mainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
             this.mainSplitContainer.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.roomListDataGridView)).EndInit();
@@ -421,7 +433,6 @@
             this.toolStrip3.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,5 +466,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

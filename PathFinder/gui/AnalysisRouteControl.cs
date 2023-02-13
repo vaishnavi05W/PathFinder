@@ -307,7 +307,7 @@
             //ptk added 2023-01-30
             if (this.info.mainRoutes == null || this.info.mainRoutes.Count == 0)
             {
-                MessageBox.Show("주요 경로를 선택하십시오.");
+                MessageBox.Show("메인 루트를 선택하십시오.");
                 //Locate to main route tab
                 return;
             }

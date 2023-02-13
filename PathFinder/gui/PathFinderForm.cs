@@ -1046,7 +1046,8 @@ namespace PathFinder
 
         private void PathFinderForm_Load(object sender, EventArgs e)
         {
-            this.vectorDrawBaseControl1.MouseWheel += VectorDrawBaseControl1_MouseWheel;
+            
+
         }
 
         private void VectorDrawBaseControl1_MouseWheel(object sender, MouseEventArgs e)
@@ -1058,6 +1059,11 @@ namespace PathFinder
            //     this.vectorDrawBaseControl1.ActiveDocument.Document.Update();
            //     this.vectorDrawBaseControl1.ActiveDocument.Document.Redraw(true);
            // }
+
+        }
+
+        private void tabControl4_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

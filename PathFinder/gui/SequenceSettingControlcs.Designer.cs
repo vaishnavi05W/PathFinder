@@ -47,6 +47,9 @@
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.sequenceSettingdataGridView = new System.Windows.Forms.DataGridView();
+            this.SequenceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Frequency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -54,9 +57,6 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.SequenceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Frequency = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -80,7 +80,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(2, 37);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -92,7 +92,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Size = new System.Drawing.Size(379, 384);
-            this.splitContainer1.SplitterDistance = 163;
+            this.splitContainer1.SplitterDistance = 162;
             this.splitContainer1.SplitterWidth = 2;
             this.splitContainer1.TabIndex = 16;
             // 
@@ -101,10 +101,10 @@
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(379, 163);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(379, 162);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Room List";
@@ -118,11 +118,11 @@
             this.tableLayoutPanel2.Controls.Add(this.listBox1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(2, 15);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(375, 146);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(375, 145);
             this.tableLayoutPanel2.TabIndex = 18;
             // 
             // tableLayoutPanel3
@@ -133,12 +133,12 @@
             this.tableLayoutPanel3.Controls.Add(this.roomListDataGridView, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(1, 1);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(185, 144);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(185, 143);
             this.tableLayoutPanel3.TabIndex = 19;
             // 
             // roomGroupDataGridView1
@@ -153,8 +153,8 @@
             this.Column17});
             this.roomGroupDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roomGroupDataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.roomGroupDataGridView1.Location = new System.Drawing.Point(2, 74);
-            this.roomGroupDataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roomGroupDataGridView1.Location = new System.Drawing.Point(2, 73);
+            this.roomGroupDataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.roomGroupDataGridView1.Name = "roomGroupDataGridView1";
             this.roomGroupDataGridView1.RowHeadersWidth = 20;
             this.roomGroupDataGridView1.RowTemplate.Height = 28;
@@ -197,12 +197,12 @@
             this.roomListDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.roomListDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.roomListDataGridView.Location = new System.Drawing.Point(2, 2);
-            this.roomListDataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.roomListDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.roomListDataGridView.Name = "roomListDataGridView";
             this.roomListDataGridView.RowHeadersWidth = 20;
             this.roomListDataGridView.RowTemplate.Height = 28;
             this.roomListDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.roomListDataGridView.Size = new System.Drawing.Size(181, 68);
+            this.roomListDataGridView.Size = new System.Drawing.Size(181, 67);
             this.roomListDataGridView.TabIndex = 0;
             this.roomListDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomListDataGridView_CellClick);
             this.roomListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomListDataGridView_CellContentClick);
@@ -220,10 +220,10 @@
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(189, 2);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox1.Size = new System.Drawing.Size(184, 142);
+            this.listBox1.Size = new System.Drawing.Size(184, 141);
             this.listBox1.TabIndex = 5;
             // 
             // groupBox2
@@ -231,10 +231,10 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.groupBox2.Size = new System.Drawing.Size(379, 219);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(1);
+            this.groupBox2.Size = new System.Drawing.Size(379, 220);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Defined Sequence";
@@ -247,12 +247,12 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox6, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 14);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.43284F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.56716F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(377, 204);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(377, 205);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // toolStrip3
@@ -305,10 +305,10 @@
             this.groupBox6.Controls.Add(this.sequenceSettingdataGridView);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(2, 29);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox6.Size = new System.Drawing.Size(373, 173);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Size = new System.Drawing.Size(373, 174);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Sequence List";
@@ -324,15 +324,40 @@
             this.sequenceSettingdataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sequenceSettingdataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.sequenceSettingdataGridView.Location = new System.Drawing.Point(2, 15);
-            this.sequenceSettingdataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sequenceSettingdataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.sequenceSettingdataGridView.Name = "sequenceSettingdataGridView";
             this.sequenceSettingdataGridView.RowHeadersWidth = 20;
             this.sequenceSettingdataGridView.RowTemplate.Height = 28;
             this.sequenceSettingdataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.sequenceSettingdataGridView.Size = new System.Drawing.Size(369, 156);
+            this.sequenceSettingdataGridView.Size = new System.Drawing.Size(369, 157);
             this.sequenceSettingdataGridView.TabIndex = 0;
             this.sequenceSettingdataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.sequenceSettingdataGridView_CellEndEdit);
             this.sequenceSettingdataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.sequenceSettingdataGridView_CellValueChanged_1);
+            // 
+            // SequenceName
+            // 
+            this.SequenceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.SequenceName.HeaderText = "SequenceName";
+            this.SequenceName.MinimumWidth = 8;
+            this.SequenceName.Name = "SequenceName";
+            this.SequenceName.Width = 109;
+            // 
+            // Frequency
+            // 
+            this.Frequency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Frequency.HeaderText = "Frequency";
+            this.Frequency.MinimumWidth = 8;
+            this.Frequency.Name = "Frequency";
+            this.Frequency.Width = 82;
+            // 
+            // Column39
+            // 
+            this.Column39.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Column39.HeaderText = "SequenceRooms";
+            this.Column39.MinimumWidth = 400;
+            this.Column39.Name = "Column39";
+            this.Column39.ReadOnly = true;
+            this.Column39.Width = 400;
             // 
             // toolStrip1
             // 
@@ -352,10 +377,10 @@
             // 
             // toolStripLabel2
             // 
-            this.toolStripLabel2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.toolStripLabel2.Font = new System.Drawing.Font("Malgun Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(46, 28);
-            this.toolStripLabel2.Text = "Rooms";
+            this.toolStripLabel2.Size = new System.Drawing.Size(70, 28);
+            this.toolStripLabel2.Text = "Sequence :";
             // 
             // toolStripButton1
             // 
@@ -402,38 +427,13 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
-            // SequenceName
-            // 
-            this.SequenceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.SequenceName.HeaderText = "SequenceName";
-            this.SequenceName.MinimumWidth = 8;
-            this.SequenceName.Name = "SequenceName";
-            this.SequenceName.Width = 109;
-            // 
-            // Frequency
-            // 
-            this.Frequency.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Frequency.HeaderText = "Frequency";
-            this.Frequency.MinimumWidth = 8;
-            this.Frequency.Name = "Frequency";
-            this.Frequency.Width = 82;
-            // 
-            // Column39
-            // 
-            this.Column39.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Column39.HeaderText = "SequenceRooms";
-            this.Column39.MinimumWidth = 400;
-            this.Column39.Name = "Column39";
-            this.Column39.ReadOnly = true;
-            this.Column39.Width = 400;
-            // 
             // SequenceSettingControlcs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SequenceSettingControlcs";
             this.Size = new System.Drawing.Size(383, 427);
             this.splitContainer1.Panel1.ResumeLayout(false);

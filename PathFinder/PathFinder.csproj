@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ApplicationIcon>vdfexe.ico</ApplicationIcon>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>C:\Users\jaeun\Downloads\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -14,7 +14,7 @@
     <MapFileExtensions>false</MapFileExtensions>
     <ProductName>Path Finder</ProductName>
     <SuiteName>Wyzrs</SuiteName>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
